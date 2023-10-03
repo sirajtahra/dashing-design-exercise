@@ -1,0 +1,115 @@
+@import "variables";
+@import "mixins";
+@import "spacing";
+
+@keyframes nudge {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.nudgeEffect {
+  animation: nudge 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+html,
+body,
+:global(#root) {
+  height: 100%;
+  background-color: $color-bg;
+}
+
+.wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  min-height: 100%;
+  flex-direction: column;
+  @include py(20);
+  @include respond-above($breakpoint-sm) {
+    @include px(6);
+  }
+  @include respond-above($breakpoint-lg) {
+    @include px(8);
+  }
+}
+
+.container {
+  @include respond-above($breakpoint-sm) {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 480px;
+  }
+}
+
+.formContainer {
+  background-color: $color-white;
+  padding: 12px 6px;
+  @include py(12);
+  @include px(6);
+  @include box-shadow(0, 1px, 3px, $color-shadow);
+  @include respond-above($breakpoint-sm) {
+    @include px(12);
+    border-radius: 0.5rem;
+  }
+
+  form {
+    > div {
+      @include mb(6);
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: $small-font-size;
+        font-weight: 500;
+        color: $color-gray;
+      }
+      > div {
+        @include mt(2);
+        input[type="text"],
+        input[type="password"] {
+          @include input;
+        }
+      }
+
+      input[type="checkbox"] {
+        @include checkbox;
+      }
+
+      ul {
+        @include mt(2);
+        list-style: none;
+
+        .error {
+          @include mt(2);
+          color: $color-red;
+          font-size: $small-font-size;
+        }
+      }
+
+      button {
+        @include button;
+        @include mt(4);
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

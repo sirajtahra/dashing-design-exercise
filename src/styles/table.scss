@@ -1,0 +1,87 @@
+@import "mixins";
+@import "spacing";
+
+.table-container {
+  max-height: 500px; // Set this to whatever maximum height you desire.
+  overflow-y: auto;
+  width: 100%;
+}
+
+.products-table {
+  @include m(3);
+  @include respond-above($breakpoint-sm) {
+    @include p(12);
+    max-width: 80rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      background-color: #f5f5f5;
+
+      th {
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #ddd;
+        }
+
+        .header-content {
+          display: flex;
+          align-items: center; // vertically centers children
+          justify-content: center; // horizontally centers children
+
+          // Space between text and icon
+          & > span {
+            margin-right: 8px; // adjust as needed
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: #fafafa;
+        }
+
+        &:hover {
+          background-color: #eaeaea;
+        }
+
+        td {
+          padding: 10px;
+          border: 1px solid #e0e0e0;
+
+          img {
+            max-width: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .search-input {
+      margin-right: 8px;
+      max-width: 20rem;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.ease-out {
+  transition: all 0.3s ease-out;
+}
+
+.ease-in {
+  transition: all 0.3s ease-in;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.duration-75 {
+  transition-duration: 75ms;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.scale-95 {
+  transform: scale(0.95);
+}
+
+.scale-100 {
+  transform: scale(1);
+}
+
+.origin-top-right {
+  transform-origin: top right;
+}

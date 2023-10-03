@@ -1,0 +1,26 @@
+// breakpoints
+$breakpoint-sm: 576px; // Small devices (landscape phones)
+$breakpoint-md: 768px; // Medium devices (tablets)
+$breakpoint-lg: 992px; // Large devices (desktops)
+$breakpoint-xl: 1200px; // Extra large devices (large desktops)
+
+// colors
+$color-primary: #3498db;
+$color-bg: rgb(229 231 235);
+$color-white: #fff;
+$color-shadow: rgb(0 0 0 / 0.1);
+$color-gray: rgb(17 24 39);
+$color-red: #e74c3c;
+$gray-700: #4a4a4a;
+$gray-800: #2d2d2d;
+$gray-900: #1a1a1a;
+$gray-400: #bdbdbd;
+$gray-100: #f5f5f5;
+
+// spacing
+$spacing-unit: 0.25rem;
+
+// font sizes
+$small-font-size: 0.875rem;
+$medium-font-size: 1rem;
+$large-font-size: 1.25rem;

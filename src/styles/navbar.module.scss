@@ -1,0 +1,122 @@
+@import "variables";
+@import "mixins";
+@import "spacing";
+
+.navbar {
+  background-color: $color-white;
+  @include box-shadow(0, 0, 0.5rem, $color-shadow);
+
+  .linkBtn {
+    @include link-btn;
+    @include px(4);
+    @include py(2);
+    color: $gray-900;
+  }
+
+  .link {
+    @include link;
+    @include px(4);
+    @include py(2);
+    color: $gray-900;
+  }
+
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80rem;
+    @include px(2);
+    @include respond-above($breakpoint-sm) {
+      @include px(6);
+    }
+    @include respond-above($breakpoint-lg) {
+      @include px(8);
+    }
+
+    .subContainer {
+      position: relative;
+      display: flex;
+      height: 4rem;
+      justify-content: space-between;
+
+      .logo {
+        height: 2rem;
+        width: auto;
+      }
+
+      .mainSection {
+        @include respond-above($breakpoint-sm) {
+          @include ml(6);
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .userIconImg {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 9999px;
+      }
+
+      .userIconButton {
+        position: relative;
+        display: flex;
+        border-radius: 9999px;
+        background-color: $gray-900;
+        font-size: $small-font-size;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .menuContainer {
+        display: flex;
+        align-items: center;
+        @include respond-above($breakpoint-sm) {
+          display: none;
+        }
+      }
+
+      .menuPopOver {
+        position: absolute;
+        right: 0;
+        z-index: 10;
+        @include mt(2);
+        @include py(1);
+        width: 12rem;
+        transform-origin: top right;
+        border-radius: 0.375rem;
+        background-color: $color-white;
+        @include box-shadow(0, 0, 0.5rem, $color-shadow);
+      }
+
+      .menuIconButton {
+        @include p(2);
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.375rem;
+        border: 0;
+        &:hover {
+          background-color: $gray-400;
+          transition: background-color 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .disclosureMenuContainer {
+    @include respond-above($breakpoint-sm) {
+      display: none;
+    }
+
+    .section {
+      @include px(2);
+      @include py(2);
+      @include pt(2);
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

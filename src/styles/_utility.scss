@@ -1,0 +1,111 @@
+@import "spacing";
+@import "mixins";
+
+@each $name, $size in $spacing-sizes {
+  .m-#{$name} {
+    margin: $size;
+  }
+  .mt-#{$name} {
+    margin-top: $size;
+  }
+  .mr-#{$name} {
+    margin-right: $size;
+  }
+  .mb-#{$name} {
+    margin-bottom: $size;
+  }
+  .ml-#{$name} {
+    margin-left: $size;
+  }
+  .mx-#{$name} {
+    margin-right: $size;
+    margin-left: $size;
+  }
+  .my-#{$name} {
+    margin-top: $size;
+    margin-bottom: $size;
+  }
+
+  .p-#{$name} {
+    padding: $size;
+  }
+  .pt-#{$name} {
+    padding-top: $size;
+  }
+  .pr-#{$name} {
+    padding-right: $size;
+  }
+  .pb-#{$name} {
+    padding-bottom: $size;
+  }
+  .pl-#{$name} {
+    padding-left: $size;
+  }
+  .px-#{$name} {
+    padding-right: $size;
+    padding-left: $size;
+  }
+  .py-#{$name} {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  @include button;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}

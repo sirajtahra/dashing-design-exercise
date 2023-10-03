@@ -1,0 +1,104 @@
+@import "variables";
+
+@mixin respond-above($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin rounded($radius: 0.5em) {
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+
+@mixin gradient($from, $to) {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from($from),
+    to($to)
+  );
+  background: -moz-linear-gradient(top, $from, $to);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+@mixin input {
+  border: 1px solid $color-gray;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: $medium-font-size;
+  width: 100%;
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+@mixin button {
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: $medium-font-size;
+  color: $color-white;
+  background-color: $color-primary;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+@mixin checkbox {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid $color-gray;
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  cursor: pointer;
+  &:hover {
+    border-color: $color-primary;
+  }
+  &:checked {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+}
+
+// mixin to style button as links
+@mixin link-btn {
+  border: none;
+  background-color: transparent;
+  color: $color-gray;
+  font-size: $medium-font-size;
+  cursor: pointer;
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+// mixin to style links
+@mixin link {
+  color: $color-primary;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
