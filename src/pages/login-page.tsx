@@ -4,7 +4,7 @@ import { useAuth } from "../hooks/useAuth";
 import styles from "../styles/login.module.scss";
 
 const passwordRegex =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
 
 const LoginPage = () => {
   const { signin } = useAuth();

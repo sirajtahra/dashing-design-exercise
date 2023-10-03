@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/20/solid";
 
 import "../styles/table.scss";
+import { Roles } from "../providers/auth-provider";
 
 interface Product {
   id: number;
@@ -137,7 +138,7 @@ export default function ProductsTable() {
           <label htmlFor="Role" className="mr-4">
             Role
           </label>
-          <select onChange={(e) => switchRole(e.target.value)}>
+          <select onChange={(e) => switchRole(e.target.value as Roles)}>
             <option value="Viewer">Viewer</option>
             <option value="Editor">Editor</option>
           </select>
